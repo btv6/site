@@ -1,0 +1,23 @@
+.container
+  .span10.offset1
+    %h1.text-center
+      = "#{@user.name}'s Information"
+
+    = form_for @user, :url => admin_user_path(params[:id]), :method => :put do |f|
+      = f.label "name", "Name:"
+      = f.text_field "name"
+      = f.label "email", "Email:"
+      = f.email_field "email"
+      -#= label_tag "role", "Role:"
+      -#= select_tag "role", "<option selected>User</option><option>President</option><option>Whatever</option>".html_safe
+      %br
+      = f.submit "Submit Changes", :confirm => "Change this user's information?"
+    %br
+
+    = @description
+    %br
+    = link_to "Change Status", admin_user_board_info_path(@user)
+    %br
+    %br
+
+    = link_to "Back to users list", admin_users_path
