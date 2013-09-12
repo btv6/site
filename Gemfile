@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.7rc1'
 gem 'haml'
 gem "google_calendar", "~> 0.3.0"
 
